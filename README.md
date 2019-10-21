@@ -2,7 +2,7 @@
 
 This is an advice board aimed at the topics covered in mod 2.
 
-A user is able to:
+A user is able to: <br>
 • View a list of categories, and click on those categories to view assoicated pieces of advice (Read)
 
 • Add a new piece of advice to a category (Create)
