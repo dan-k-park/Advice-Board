@@ -1,0 +1,4 @@
+<h1><%= @category.name %></h1>
+<% @category.advices.each do |advice| %>
+<h3><%= link_to advice.content, advice_path(advice) %></h3>
+<% end %>

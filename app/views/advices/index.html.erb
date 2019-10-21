@@ -1,0 +1,5 @@
+<% @advices.each do |advice| %>
+  <%= advice.content %>
+<% end %>
+
+<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>

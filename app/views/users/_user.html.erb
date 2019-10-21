@@ -1,0 +1,4 @@
+<%= @user.name %>
+<% @user.advices.each do |advice| %>
+  <%= link_to advice.content, advice_path(advice) %>
+<% end %>
