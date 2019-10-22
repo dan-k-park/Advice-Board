@@ -3,4 +3,5 @@
 <h3><%= link_to advice.content, advice_path(advice) %></h3>
 <% end %>
 
+<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>
 <%= link_to "Back to Categories", categories_path %>

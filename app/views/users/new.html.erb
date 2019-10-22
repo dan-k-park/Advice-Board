@@ -1,5 +1,9 @@
+<%= flash[:message] %>
 <%= form_for @user do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Signup" %>
+  <%= f.text_field :name %><br>
+  <%= f.submit "Complete Registration" %>
 <% end %>
+
+<%= button_to "Return to Sign In", login_page_path, method: 'get' %>
+

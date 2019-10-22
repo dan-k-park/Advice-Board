@@ -2,5 +2,5 @@ class Comment < ApplicationRecord
   belongs_to :advice
   belongs_to :user
 
-  validates :content, presence: true
+  validates :content, :user_id, :advice_id, presence: true
 end

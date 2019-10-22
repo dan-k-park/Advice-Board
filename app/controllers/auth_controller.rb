@@ -1,5 +1,9 @@
 class AuthController < ApplicationController
   def signin
+    flash[:message] = "Please Sign In"
+  end
+
+  def signup
   end
 
   def verify

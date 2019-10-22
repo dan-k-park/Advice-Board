@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to categories_path
     else
+      flash[:message] = "Sorry, that username is taken. Please choose a different username."
       render :new
     end
   end

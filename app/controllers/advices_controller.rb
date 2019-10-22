@@ -5,6 +5,7 @@ class AdvicesController < ApplicationController
 
   def show
     @advice = Advice.find(params[:id])
+    session[:advice_id] = params[:id]
   end
 
   def new
@@ -13,6 +14,7 @@ class AdvicesController < ApplicationController
 
   def create
     @advice = Advice.new(advice_params)
+    @advice.user_id = session[:user_id]
     if @advice.save
       redirect_to advice_path(@advice)
     else
@@ -35,7 +37,7 @@ class AdvicesController < ApplicationController
 
   def destroy
     Advice.find(params[:id]).destroy
-    @user = User.find(1)
+    @user = User.find(session[:user_id])
     redirect_to user_path(@user)
   end
 

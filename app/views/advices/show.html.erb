@@ -1,4 +1,3 @@
-<h1>Advice Board</h1><br>
 <ul>
 <h2><% @advice.categories.each do |category|  %>
       <li><%= category.name %></li>
@@ -14,5 +13,5 @@ Comments:<br>
 <% end %>
 </p>
 
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>
+<%= button_to "New Comment", new_comment_path, method: 'get' %>
 <%= link_to "Back to Categories", categories_path %>
