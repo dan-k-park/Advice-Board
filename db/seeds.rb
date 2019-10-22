@@ -34,13 +34,18 @@ advice_categories = [
   {category_id: 3, advice_id: 3}
 ]
 
-
-
+comments = [
+  {content: "It really is magic", user_id: 2, advice_id: 1},
+  {content: "It's nothing special", user_id: 3, advice_id: 1},
+  {content: "I don't remember this either lol", user_id: 1, advice_id: 3},
+  {content: "This was the worst thing ever", user_id: 1, advice_id: 2}
+]
 
 users.each { |user| User.create(user) }
 categories.each { |category| Category.create(category)}
 advices.each { |advice| Advice.create(advice) }
 advice_categories.each { |advice_category| AdviceCategory.create(advice_category) }
+comments.each { |comment| Comment.create(comment) }
 
 
 

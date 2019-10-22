@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
-  # before_action :require_login
+  before_action :redirect_user
 
   def index
+    @user = User.find(session[:user_id])
     @categories = Category.all
   end
 
@@ -14,9 +15,5 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
-
-  # def require_login
-  #   return head(:forbidden) unless session.include? :user_id
-  # end
 
 end

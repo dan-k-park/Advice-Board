@@ -35,7 +35,8 @@ class AdvicesController < ApplicationController
 
   def destroy
     Advice.find(params[:id]).destroy
-    redirect_to advices_path
+    @user = User.find(1)
+    redirect_to user_path(@user)
   end
 
   private
