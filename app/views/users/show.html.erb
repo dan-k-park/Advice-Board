@@ -1,1 +1,10 @@
-<%= render @user %>
+<h1><%= @user.name %></h1>
+<ul>
+<% @user.advices.each do |advice| %>
+  <li> <%= link_to advice.content, advice_path(advice) %>
+  <%= button_to "Delete", advice_path(advice), method: :delete %><br>
+  </li?
+<% end %>
+</ul>
+
+<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %><br>

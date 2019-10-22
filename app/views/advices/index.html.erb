@@ -1,5 +1,9 @@
+<h1>Every piece of advice for Mod 2</h1>
+<ul>
 <% @advices.each do |advice| %>
-  <%= advice.content %>
+  <li><%= link_to advice.content, advice_path(advice) %> | <% advice.categories.each do |category| %>
+    <%= category.name %>
+    <% end %>
+  </li>
 <% end %>
-
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>
+</ul>

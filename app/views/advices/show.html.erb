@@ -1,11 +1,17 @@
 <h1>Advice Board</h1><br>
-<h2><%= advice.category.name %></h2>
+<ul>
+<h2><% @advice.categories.each do |category|  %>
+      <li><%= category.name %></li>
+    <% end %>
+</h2>
 
-<h3><%= @advice.content %></h3>
-<h4><%= @advice.user.name %></h4>
+<p><%= "#{@advice.content} - #{@advice.user.name}" %></p>
 
 <p>
+Comments:<br>
 <% @advice.comments.each do |comment| %>
-  <%= "#{comment.content} - #{comment.user.name}" %>
+  <%= "#{comment.content} - #{comment.user.name}" %><br>
 <% end %>
 </p>
+
+<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>

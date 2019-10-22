@@ -33,10 +33,15 @@ class AdvicesController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    Advice.find(params[:id]).destroy
+    redirect_to advices_path
+  end
 
+  private
+  # , categories_attributes: [:name]
   def advice_params
-    params.require(:advice).permit(:content, :user_id)
+    params.require(:advice).permit(:content, :user_id, category_ids: [])
   end
 
 end

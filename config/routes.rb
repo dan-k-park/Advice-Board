@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # get '/login' => 'sessions#new'
   # post '/login' => 'sessions#create'
   # post '/login' => 'sessions#destroy'
+  get '/' => 'categories#index'
   resources :users, only: [:show]
   resources :comments, only: [:new, :create]
   resources :categories, :advices

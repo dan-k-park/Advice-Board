@@ -1,8 +1,8 @@
 class CreateAdviceCategories < ActiveRecord::Migration[6.0]
   def change
     create_table :advice_categories do |t|
-      t.integer :advice_id
-      t.integer :category_id
+      t.belongs_to :advice, index: true, foreign_key: true
+      t.belongs_to :category, index: true, foreign_key: true
 
       t.timestamps
     end

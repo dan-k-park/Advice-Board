@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_042801) do
+ActiveRecord::Schema.define(version: 2019_10_21_212938) do
 
   create_table "advice_categories", force: :cascade do |t|
-    t.integer "advice_id"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "advice_id"
   end
 
   create_table "advices", force: :cascade do |t|
