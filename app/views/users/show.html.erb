@@ -1,14 +1,21 @@
-<h1 id="title"><%= @user.name %>'s Advice</h1>
-<ul>
-<% @user.advices.each do |advice| %>
-  <li> <%= link_to advice.content, advice_path(advice), id: "white" %>: 
-  <% advice.categories.each do |category| %>
-  [<%= link_to category.name, category_path(category), id: "white"%>]
+<h1 class="pagetitles"><%= @user.name %>'s Advice</h1>
+
+<ul style="margin-top:6%">
+  <% @user.advices.each do |advice| %>
+    <li class="advicelist"> 
+      <%= link_to advice.content, advice_path(advice), id: "white" %>: 
+      <% advice.categories.each do |category| %>
+        [<%= link_to category.name, category_path(category), id: "white"%>]
+      <% end %> 
+    <%= button_to "Delete", advice_path(advice), method: :delete, class:"btn btn-link", id:"delete" %>
+    <%= button_to "Edit", edit_advice_path(advice), method: :get, class:"btn btn-link", id:"delete" %>
+    </li>
   <% end %>
-  <%= button_to "Delete", advice_path(advice), method: :delete %><br>
-  </li>
-<% end %>
 </ul>
 
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %><br>
-<%= link_to "Back to Categories", categories_path, id: "white" %>
+<div class="bottomleft">
+  <%= button_to "Create New Advice", new_advice_path, method: 'get', class:"btn btn-link" %>
+</div>
+
+<%= link_to "Back to Categories", categories_path, id: "white", class:"bottomright" %>
+<div class="topright"><%= link_to "Log Out", logout_path, id: "white"%></div>

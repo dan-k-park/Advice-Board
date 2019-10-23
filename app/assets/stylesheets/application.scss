@@ -15,7 +15,7 @@
  */
 @font-face {
     font-family:"EraserDust";
-    src: asset-url('EraserDust/.ttf') format('truetype')
+    // src: asset-url('EraserDust/.ttf') format('truetype')
 }
 
 html,
@@ -28,13 +28,13 @@ body {
 
 #header {
     font-size:7vw;
-    margin-bottom:15%
+    margin-bottom:8%
 }
 
 #signInStuff {
-    padding:20%;
+    margin:10%;
     height:50%;
-    font-size:1.8vw
+    font-size:1.9vw
 }
 
 .col {
@@ -65,6 +65,48 @@ body {
     font-size:2vw
 }
 
+.bottomleft{
+    position:absolute;
+    margin:1%;
+    bottom:0;
+    left:0;
+    font-size:2vw
+}
+
+.btn-link {
+    color:white;
+    font-size:1.9vw
+}
+
+.pagetitles {
+    font-size:5vw;
+    text-align:center
+}
+
+
+.advicelist {
+    margin-top:1%;
+    margin-left:8%;
+    font-size: 1.7vw;
+}
+
+#advice {
+    margin-bottom:3%
+}
+
+#comment{
+    font-size:1.6vw;
+    margin-bottom:1%;
+}
+
+#comments{
+    margin:2%;
+    border-style: dotted;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    font-size:1.3vw
+}
 
 #register {
     color:white
@@ -83,4 +125,25 @@ body {
 #title {
     text-align:center;
     font-size: 7vw;
+}
+
+#everything {
+    font-size:6vw;
+}
+
+#forms {
+    font-size:1.8vw
+}
+
+#relevantAdvice {
+    font-size:3.4vw;
+    margin:auto;
+    width:50%;
+    text-align:center;
+}
+
+#delete {
+    font-size:1.2vw;
+    padding-left:0;
+    padding-top:0;
 }

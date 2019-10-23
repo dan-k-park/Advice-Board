@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get '/logout', to: "auth#logout" 
 
   resources :users
-  resources :comments, only: [:new, :create]
-  resources :categories, :advices
+  resources :categories
+  resources :advices do
+    resources :comments
+  end
+  resources :comments
+
 end
+

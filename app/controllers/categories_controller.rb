@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
     @category = Category.find(params[:id])
   end
 

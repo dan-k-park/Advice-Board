@@ -1,6 +1,21 @@
-<%= form_for @advice do |f| %>
-<%= f.label :content %>
-<%= f.text_field :content %><br>
-<%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-<%= f.submit %>
-<% end %>
+<div class="container h-100" style="margin-top:10%">
+    <div class="row h-30 justify-content-center align-items-center">
+      <div id="forms">
+        <div class="col">
+          <%= form_for @advice do |f| %>
+            <div class="col">
+              <%= f.label :advice %>
+            </div>
+            <%= f.text_area :content, cols: 30, rows: 1 %><br>
+            <div class="col", style="margin-top:3%">
+            <%= f.label :categories %>:
+            </div>
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %> 
+            <div class="col">
+            <%= f.submit "Done", class:"btn btn-link" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>  

@@ -1,11 +1,17 @@
-<h1 id="title">Every piece of advice for Mod 2</h1>
-<ul>
+<h1 class="pagetitles">Every piece of advice for Mod 2</h1>
+
+<ul style="margin-top:6%">
 <% @advices.each do |advice| %>
-  <li><%= link_to advice.content, advice_path(advice), id: "white" %> | <% advice.categories.each do |category| %>
-    [<%= link_to category.name, category_path(category), id: "white" %>]
-    <% end %>
+  <li class="advicelist">
+    <%= link_to advice.content, advice_path(advice), id: "white" %> | 
+      <% advice.categories.each do |category| %>
+        [<%= link_to category.name, category_path(category), id: "white" %>]
+      <% end %>
   </li>
 <% end %>
 </ul>
 
-<%= link_to "Back to Categories", categories_path, id: "white" %>
+<%= link_to "Back to Categories", categories_path, id: "white", class:"bottomright" %>
+<div class="topright"><%= link_to "Log Out", logout_path, id: "white"%></div>
+
+<div class="topleft"><%= link_to @user.name, user_path(@user), id: "white"%></div>

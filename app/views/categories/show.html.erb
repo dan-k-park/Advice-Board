@@ -1,7 +1,17 @@
-<h1 id="title"><%= @category.name %></h1>
-<% @category.advices.each do |advice| %>
-<h3><%= link_to advice.content, advice_path(advice), id: "white" %></h3>
-<% end %>
+<h1 class="pagetitles">Advice for <%= @category.name %></h1>
 
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %>
-<%= link_to "Back to Categories", categories_path, id: "white" %>
+<ul style="margin-top:6%">
+  <% @category.advices.each do |advice| %>
+    <li class="advicelist">
+      <%= link_to advice.content, advice_path(advice), id: "white" %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="bottomleft">
+  <%= button_to "Create New Advice", new_advice_path, method: 'get', class:"btn btn-link" %>
+</div>
+
+<%= link_to "Back to Categories", categories_path, id: "white", class:'bottomright' %>
+<div class="topright"><%= link_to "Log Out", logout_path, id: "white"%></div>
+<div class="topleft"><%= link_to @user.name, user_path(@user), id: "white"%></div>

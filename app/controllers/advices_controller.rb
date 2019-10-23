@@ -1,11 +1,12 @@
 class AdvicesController < ApplicationController
   def index
+    @user = User.find(session[:user_id])
     @advices = Advice.all
   end
 
   def show
     @advice = Advice.find(params[:id])
-    session[:advice_id] = params[:id]
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -24,11 +25,12 @@ class AdvicesController < ApplicationController
 
   def edit
     @advice = Advice.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def update
-    @advice = Advice.find(params[:id])
-    if @advice.update
+    @advice = Advice.find(params[:id]) 
+    if @advice.update(advice_params)
       redirect_to advice_path(@advice)
     else
       render :edit
@@ -36,9 +38,8 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
-    @advice = Advice.find_by_id(session[:advice_id])
+    @advice = Advice.find(params[:id])
     @advice.destroy
-    session[:advice_id].clear
     @user = User.find(session[:user_id])
     redirect_to user_path(@user)
   end

@@ -1,5 +1,20 @@
-<%= form_for @comment do |f| %>
-<%= f.label :content %>
-<%= f.text_field :content %>
-<%= f.submit %>
-<% end %>
+<h1 class="pagetitles">Writing a comment for <%= @user.name %>'s Advice</h1>
+
+<div class="container h-100" style="margin-top:10%">
+    <div class="row h-30 justify-content-center align-items-center">
+      <div id="forms">
+        <div class="col">
+          <%= form_for @comment do |f| %>
+            <div class="col">
+              <%= f.label :Write_your_comment_below %>
+            </div>
+            <%= f.text_area :content, cols: 40, rows: 5 %><br>
+            <div class="col">
+            <input type="hidden" name="advice" value=<%= "#{(@advice.id).to_i}" %>/>
+            <%= f.submit "Done", class:"btn btn-link" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>  

@@ -1,15 +1,18 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    @user = User.find(session[:user_id])
+    @advice = Advice.find(params[:advice_id])
   end
 
   def create
+    @advice = Advice.find(params[:advice].to_i)
+    @user = User.find(session[:user_id])
     @comment = Comment.new(comment_params)
-    @comment.user_id = session[:user_id]
-    @comment.advice_id = session[:advice_id]
+    @comment.advice_id = @advice.id
+    @comment.user_id = @user.id
     if @comment.save
-      session[:advice_id].clear
-      redirect_to advice_path(@comment.advice)
+      redirect_to advice_path(@advice)
     else
       render :new
     end

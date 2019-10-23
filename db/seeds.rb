@@ -11,51 +11,45 @@ Comment.destroy_all
 User.destroy_all
 
 users = [
-  {name: "Daniel"},
-  {name: "Dan"},
+  {name: "Dan_P"},
+  {name: "Dan_Z"},
   {name: "Cole"},
-  {name: "Garret"}
+  {name: "Garret"},
+  {name: "Andy"},
+  {name: "Cha"}
 ]
 
 categories = [
   {name: "Rails"},
   {name: "Sinatra"},
-  {name: "Rack"},
+  {name: "Forms"},
   {name: "CRUD"},
   {name: "REST"},
-  {name: "MVP"}
+  {name: "MVC"}
 ]
 
 advices = [
-  {content: "It's magic", user_id: 1},
-  {content: "Good luck", user_id: 2},
-  {content: "What was this again?", user_id: 3}
+  {content: "This was the best part of Mod 2", user_id: 1},
+  {content: "Good for trains to ride on", user_id: 2},
+  {content: "Don't be afraid of polymorphisms", user_id: 3},
+  {content: "Don't make custom routes unless you're absolutely sure what you need isn't RESTful", user_id: 3},
+  {content: "form_for > form_tag", user_id: 5},
+  {content: "Private methods for params keep things DRY", user_id: 4},
+  {content: "Don't forget to make instance variables", user_id: 6}
 ]
 
 advice_categories = [
-  {category_id: 1, advice_id: 1},
-  {category_id: 2, advice_id: 2},
-  {category_id: 3, advice_id: 3}
+  {category_id: 2, advice_id: 1},
+  {category_id: 1, advice_id: 2},
+  {category_id: 1, advice_id: 3},
+  {category_id: 5, advice_id: 4},
+  {category_id: 3, advice_id: 5},
+  {category_id: 4, advice_id: 6},
+  {category_id: 6, advice_id: 7}
 ]
 
-comments = [
-  {content: "It really is magic", user_id: 2, advice_id: 1},
-  {content: "It's nothing special", user_id: 3, advice_id: 1},
-  {content: "I don't remember this either lol", user_id: 1, advice_id: 3},
-  {content: "This was the worst thing ever", user_id: 1, advice_id: 2}
-]
 
 users.each { |user| User.create(user) }
 categories.each { |category| Category.create(category)}
 advices.each { |advice| Advice.create(advice) }
 advice_categories.each { |advice_category| AdviceCategory.create(advice_category) }
-comments.each { |comment| Comment.create(comment) }
-
-
-
-# advice = [
-#   {content: "It's a lot better than Sinatra", user_id: 2},
-#   {content: "Good luck", user_id: 1},
-#   {content: "I don't remember this at all", user_id: 3}
-# ]
-
