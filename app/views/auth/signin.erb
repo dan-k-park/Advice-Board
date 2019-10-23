@@ -1,7 +1,17 @@
-<%= flash[:message] %>
-<%= form_for :auth do |f| %>
-  <%= f.text_field :name %><br>
-  <%= f.submit "Login" %>
-<% end %>
-
-<%= button_to "Register", new_user_path, method: 'get' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <p class="signInStuff">
+        <%= flash[:message] %>
+        <%= form_for :auth do |f| %>
+          <%= f.text_field :name %><br>
+          <button type="button" class="btn btn-outline-dark"><%= f.submit "Login" %></button>
+        <% end %>
+        <%= link_to "Register", new_user_path, method: 'get', id: "register" %>
+      </p>
+    </div>
+  </div>
+</div>    
+      
+      
+      

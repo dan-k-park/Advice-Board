@@ -19,7 +19,10 @@ users = [
 categories = [
   {name: "Rails"},
   {name: "Sinatra"},
-  {name: "Rack"}
+  {name: "Rack"},
+  {name: "CRUD"},
+  {name: "REST"},
+  {name: "MVP"}
 ]
 
 advices = [
