@@ -1,14 +1,14 @@
-<h1><%= @user.name %></h1>
+<h1 id="title"><%= @user.name %>'s Advice</h1>
 <ul>
 <% @user.advices.each do |advice| %>
-  <li> <%= link_to advice.content, advice_path(advice) %>: 
+  <li> <%= link_to advice.content, advice_path(advice), id: "white" %>: 
   <% advice.categories.each do |category| %>
-  (<%= link_to category.name, category_path(category) %>)
+  [<%= link_to category.name, category_path(category), id: "white"%>]
   <% end %>
-  <%= button_to "Delete", advice_path(advice.id), method: :delete %><br>
+  <%= button_to "Delete", advice_path(advice), method: :delete %><br>
   </li>
 <% end %>
 </ul>
 
 <%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %><br>
-<%= link_to "Back to Categories", categories_path %>
+<%= link_to "Back to Categories", categories_path, id: "white" %>

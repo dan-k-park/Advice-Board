@@ -1,8 +1,9 @@
-<ul>
-<h2><% @advice.categories.each do |category|  %>
-      <li><%= category.name %></li>
-    <% end %>
-</h2>
+<div id="categories">
+<p>This advice is relevant to:</p>
+<% @advice.categories.each do |category|  %>
+  <%= category.name %>
+<% end %>
+</div>
 
 <p><%= "#{@advice.content} - #{@advice.user.name}" %></p>
 
@@ -14,4 +15,4 @@ Comments:<br>
 </p>
 
 <%= button_to "New Comment", new_comment_path, method: 'get' %>
-<%= link_to "Back to Categories", categories_path %>
+<%= link_to "Back to Categories", categories_path, id: "white" %>

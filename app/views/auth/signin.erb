@@ -1,17 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md">
-      <p class="signInStuff">
-        <%= flash[:message] %>
-        <%= form_for :auth do |f| %>
-          <%= f.text_field :name %><br>
-          <button type="button" class="btn btn-outline-dark"><%= f.submit "Login" %></button>
-        <% end %>
-        <%= link_to "Register", new_user_path, method: 'get', id: "register" %>
-      </p>
+<h1 id="header" class="text-center">Advice Board</h1>
+
+<div id="signInStuff" >
+  <div class="container h-100">
+    <div class="row h-30 justify-content-center align-items-center">
+      <div class="col">
+          <%= flash[:message] %>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+          <%= form_for :auth do |f| %>
+            <%= f.text_field :name %><br>
+            <%= f.submit "Login" %>
+          <% end %>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+      <%= link_to "Register", new_user_path, method: 'get', id: "register" %>
+      </div>
     </div>
-  </div>
-</div>    
+  </div>   
+</div> 
       
       
       

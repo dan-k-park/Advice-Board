@@ -1,16 +1,33 @@
-<h2 style="text-align:center">Categories</h2>
-<% @categories.each do |category| %>
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to category.name, category_path(category) %></h5>
+<h1 id="header" class="text-center">Advice Board</h1>
+
+<div class="container h-50">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col">
+      <%= link_to @categories[0].name, category_path(@categories[0]), id: "categories" %>
+    </div>
+    <div class="col">
+      <%= link_to @categories[1].name, category_path(@categories[1]), id: "categories" %>
+    </div>
+    <div class="col">
+      <%= link_to @categories[2].name, category_path(@categories[2]), id: "categories" %>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+      <%= link_to @categories[3].name, category_path(@categories[3]), id: "categories" %>
+    </div>
+    <div class="col">
+      <%= link_to @categories[4].name, category_path(@categories[4]), id: "categories" %>
+    </div>
+    <div class="col">
+      <%= link_to @categories[5].name, category_path(@categories[5]), id: "categories" %>
+    </div>
   </div>
 </div>
-<% end %>
 
 <div style="text-align:right">
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get' %><br>
-<%= link_to "View All", advices_path %><br>
-<%= link_to "Profile", user_path(@user) %><br>
-<%= link_to "Log Out", logout_path %>
+<%= button_to "Add a new piece of advice", new_advice_path, method: 'get'%><br>
+<%= link_to "View All", advices_path, id: "white"%><br>
+<%= link_to @user.name, user_path(@user), id: "white"%><br>
+<%= link_to "Log Out", logout_path, id: "white"%> 
 </div>
 

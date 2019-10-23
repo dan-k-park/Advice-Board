@@ -1,11 +1,11 @@
-<h1>Every piece of advice for Mod 2</h1>
+<h1 id="title">Every piece of advice for Mod 2</h1>
 <ul>
 <% @advices.each do |advice| %>
-  <li><%= link_to advice.content, advice_path(advice) %> | <% advice.categories.each do |category| %>
-    <%= link_to category.name, category_path(category) %>
+  <li><%= link_to advice.content, advice_path(advice), id: "white" %> | <% advice.categories.each do |category| %>
+    [<%= link_to category.name, category_path(category), id: "white" %>]
     <% end %>
   </li>
 <% end %>
 </ul>
 
-<%= link_to "Back to Categories", categories_path %>
+<%= link_to "Back to Categories", categories_path, id: "white" %>

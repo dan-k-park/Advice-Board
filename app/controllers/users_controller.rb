@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
  
   def new
+    flash[:message] = "Choose a new username"
     @user = User.new
   end
 
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to categories_path
     else
-      flash[:message] = "Sorry, that username is taken. Please choose a different username."
+      flash[:message] = "Sorry, that username isn't available"
       render :new
     end
   end

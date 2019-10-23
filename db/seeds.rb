@@ -12,8 +12,9 @@ User.destroy_all
 
 users = [
   {name: "Daniel"},
-  {name: "Danile"},
-  {name: "Cole"}
+  {name: "Dan"},
+  {name: "Cole"},
+  {name: "Garret"}
 ]
 
 categories = [

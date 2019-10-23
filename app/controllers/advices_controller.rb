@@ -37,7 +37,6 @@ class AdvicesController < ApplicationController
 
   def destroy
     @advice = Advice.find_by_id(session[:advice_id])
-    byebug
     @advice.destroy
     session[:advice_id].clear
     @user = User.find(session[:user_id])
