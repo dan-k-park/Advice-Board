@@ -21,13 +21,14 @@
     <div class="col">
       <%= link_to @categories[5].name, category_path(@categories[5]), id: "categories" %>
     </div>
+    <div class="w-100"></div>
+    <div class="col">
+      <%= link_to "View All", advices_path, id: "categories"%><br>
+    </div>
   </div>
 </div>
 
-<div style="text-align:right">
-<%= button_to "Add a new piece of advice", new_advice_path, method: 'get'%><br>
-<%= link_to "View All", advices_path, id: "white"%><br>
-<%= link_to @user.name, user_path(@user), id: "white"%><br>
-<%= link_to "Log Out", logout_path, id: "white"%> 
-</div>
+<div class="topleft"><%= link_to @user.name, user_path(@user), id: "white"%></div>
+<div class="topright"><%= link_to "Log Out", logout_path, id: "white"%></div>
+
 

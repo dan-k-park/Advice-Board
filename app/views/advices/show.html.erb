@@ -1,11 +1,12 @@
-<div id="categories">
-<p>This advice is relevant to:</p>
-<% @advice.categories.each do |category|  %>
-  <%= category.name %>
-<% end %>
-</div>
 
-<p><%= "#{@advice.content} - #{@advice.user.name}" %></p>
+<h1 id="title">This advice is relevant to:</h1>
+<% @advice.categories.each do |category|  %>
+  <div style="font-size:5vw;text-align:center"><%= category.name %></div>
+<% end %>
+
+<div style="text-align:center;margin-top:10%;font-size:3.5vw">
+<%= "#{@advice.content} - #{@advice.user.name}" %>
+</div>
 
 <p>
 Comments:<br>
@@ -13,6 +14,6 @@ Comments:<br>
   <%= "#{comment.content} - #{comment.user.name}" %><br>
 <% end %>
 </p>
-
+</div>
 <%= button_to "New Comment", new_comment_path, method: 'get' %>
-<%= link_to "Back to Categories", categories_path, id: "white" %>
+<%= link_to "Back to Categories", categories_path, id: "white", class: "bottomright" %>

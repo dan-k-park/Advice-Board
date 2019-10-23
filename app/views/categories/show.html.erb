@@ -1,4 +1,4 @@
-<h1 class="text-center" id="categories"><%= @category.name %></h1>
+<h1 id="title"><%= @category.name %></h1>
 <% @category.advices.each do |advice| %>
 <h3><%= link_to advice.content, advice_path(advice), id: "white" %></h3>
 <% end %>

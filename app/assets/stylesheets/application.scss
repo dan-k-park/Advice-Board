@@ -27,34 +27,60 @@ body {
 }
 
 #header {
-    font-size:7vw
+    font-size:7vw;
+    margin-bottom:15%
 }
 
 #signInStuff {
     padding:20%;
     height:50%;
-    font-size: 1.8vw
+    font-size:1.8vw
 }
 
 .col {
-    text-align: center
+    text-align:center
 }
 
+.topleft{
+    position:absolute;
+    margin:1%;
+    top:0;
+    left:0;
+    font-size: 2vw
+}
+
+.topright{
+    position:absolute;
+    margin:1%;
+    top:0;
+    right:0;
+    font-size:2vw
+}
+
+.bottomright{
+    position:absolute;
+    margin:1%;
+    bottom:0;
+    right:0;
+    font-size:2vw
+}
+
+
 #register {
-    color: white
+    color:white
 }
 
 #white {
-    color: white
+    color:white
 }
 
 #categories {
-    font-size: 5vw;
-    color: white;
-    text-align: center
+    font-size:5vw;
+    color:white;
+    text-align:center
 }
 
 #title {
-    text-align: center;
-    font-size: 5vw;
+    text-align:center;
+    font-size: 7vw;
 }
