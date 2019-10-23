@@ -36,7 +36,10 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
-    Advice.find(params[:id]).destroy
+    @advice = Advice.find_by_id(session[:advice_id])
+    byebug
+    @advice.destroy
+    session[:advice_id].clear
     @user = User.find(session[:user_id])
     redirect_to user_path(@user)
   end

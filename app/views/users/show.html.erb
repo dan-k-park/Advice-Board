@@ -3,9 +3,9 @@
 <% @user.advices.each do |advice| %>
   <li> <%= link_to advice.content, advice_path(advice) %>: 
   <% advice.categories.each do |category| %>
-  <%= link_to category.name, category_path(category) %>
+  (<%= link_to category.name, category_path(category) %>)
   <% end %>
-  <%= button_to "Delete", advice_path(advice), method: :delete %><br>
+  <%= button_to "Delete", advice_path(advice.id), method: :delete %><br>
   </li>
 <% end %>
 </ul>

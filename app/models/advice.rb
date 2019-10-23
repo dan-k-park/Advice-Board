@@ -1,7 +1,7 @@
 class Advice < ApplicationRecord
-  has_many :advice_categories
+  has_many :advice_categories,dependent: :destroy
   has_many :categories, through: :advice_categories
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
 
   validates :content, presence: true, uniqueness: true
