@@ -5,5 +5,5 @@ class Advice < ApplicationRecord
   belongs_to :user
 
   validates :content, presence: true, uniqueness: true
-
+  validates :category_ids, presence: true
 end
