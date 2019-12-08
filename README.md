@@ -1,6 +1,6 @@
 # README
 
-This is an advice board aimed at the topics covered in Mod 2.
+This is an advice board filled with quotes relevant to different areas of life.
 
 How to Run:<br>
 1) Enter "yarn install --check-files" into the terminal
@@ -13,22 +13,19 @@ How to Run:<br>
 
 5) The login page provides the option to login with a preexisting username (included in seed file) or register as a new user
 
-As a user, I can: <br>
-• Add a new piece of advice to a category (Create)
+A user can: <br>
+• Add a new piece of advice to a category
 
 • View a collection of categories each containing different pieces of advice (Read)
 
-• Edit a piece of advice (Update)
+• Edit a piece of advice
 
-• Delete a piece of advice (Delete)
+• Delete a piece of advice
 
 • Create/login to an account
 
 • Post comments on advice given by others
 
-• View all advice available for Mod 2
+• View all available pieces of advice
 
 • View a profile page which includes every piece of advice I've submitted
-
-
-# Mod-2-Project
